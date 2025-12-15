@@ -5,5 +5,7 @@ nombre_entier = 12
 print(issubclass(bool, int))
 # Convertissez nombre_entier en string sans le stocker et printer le résultat
 print(f"{nombre_entier}")
+print(str(nombre_entier)) #correction
+
 # Affichez le type de nombre_entier dans la console
 print(type(nombre_entier))

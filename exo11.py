@@ -17,11 +17,11 @@ except :
 # Demander à un utilisateur de taper un mot
 mot = input("Tappez un mot ")
 # Si celui-ci possède la lettre e OU la lettre a printer "Beep"
-if ("e" in mot or "a" in mot) :
-    print("Beep")
 # Si celui-ci possède la lettre e OU la lettre a, mais sans que les deux conditions soit vraies en même temps, printer "Boop"
 if (("e" in mot and "a" not in mot) or ("a" in mot and "e" not in mot)) :
     print("Boop")
+elif ("e" in mot or "a" in mot) :
+    print("Beep")
 
 # Exo 3 - Optionnel
 # A l'aide d'un match case et d'une boucle, printer "RGB" lorsque la couleur présente dans la liste suivante est une couleur au format RGB (Red Green Blue), et

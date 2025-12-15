@@ -6,7 +6,7 @@ print(57 - 42)
 # 3. Multipliez 6 par 9
 print(6 * 9)
 # 4. Divisez 100 par 25
-print(100 // 25)
+print(100 / 25) # mais // marche aussi juste que ça fait une division entière
 # 5. Trouvez le reste de la division de 29 par 5
 print(29 % 5)
 # 6. Effectuez une division entière de 29 par 5
@@ -38,7 +38,7 @@ c *= 4
 print(c)
 # 4. Initialisez la variable d avec la valeur 50, puis divisez d par 2
 d = 50
-d //= 2
+d /= 2 # c'était bon avec // encore une fois, mais pas le même type de division
 print(d)
 # 5. Initialisez la variable e avec la valeur 9, puis calculez le reste de la division de e par 4
 e = 9
@@ -56,6 +56,7 @@ print(20 == 25)
 print(30 != 30)
 # 5. Vérifiez si "Bonjour" est identique à "bonjour"
 print("Bonjour" == "bonjour")
+print("Bonjour" is "bonjour") # on attendait plutôt celui ci même si l'autre fonctionnait dans ce cas
 
 # Exo 5
 # 1. Vérifiez si le caractère 'a' est présent dans la chaîne "programmation"

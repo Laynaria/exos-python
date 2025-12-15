@@ -34,10 +34,40 @@ print(result)
 
 # Exo3
 # A l'aide du module zipfile, extraire l'archives source.zip situé dans le dossier "Annexes"
+import zipfile
+
+root = zipfile.ZipFile("sources.zip", "r")
+root.extractall()
 # A l'aide du module pathlib, ou os, et d'une boucle, créer un trieur de fichier qui va répartir les fichiers extraits en 5 dossiers (Musique, Videos, Images, 
 # Documents, Divers) selon les règles suivantes
+root = Path("data") # importé de l'exo 1
+
+musique = root.joinpath("Musique")
+videos = root.joinpath("Videos")
+images = root.joinpath("Images")
+documents = root.joinpath("Documents")
+divers = root.joinpath("Divers")
 # 1. mp3, wav, flac : Musique
 # 2. avi, mp4, gif : Videos
 # 3. bmp, png, jpg : Images
 # 4. txt, pptx, csv, xls, odp, pages : Documents
 # 5. autres : Divers
+
+for file in root.iterdir():
+    if file.is_file():
+        match file.suffix:
+            case ".mp3" | ".wav" | ".flac":
+                musique.mkdir(exist_ok=True)
+                file.rename(musique / file.name)
+            case ".avi" | ".mp4" | ".gif":
+                videos.mkdir(exist_ok=True)
+                file.rename(videos / file.name)
+            case ".bmp" | ".jpg" | ".png":
+                images.mkdir(exist_ok=True)
+                file.rename(images / file.name)
+            case ".txt" | ".pptx" | ".csv" | ".xls" | ".odp" | ".pages":
+                documents.mkdir(exist_ok=True)
+                file.rename(documents / file.name)
+            case _:
+                divers.mkdir(exist_ok=True)
+                file.rename(divers / file.name)

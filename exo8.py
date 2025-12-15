@@ -29,6 +29,7 @@ Son pelage est typique d'une espèce aquatique. La peau est protégée par une d
 couche de poils de bourre, qui maintiennent une pellicule d'air tempéré entre elle
 et l'eau. Les poils de jarre, plus longs, protègent l'ensemble. La fourrure est
 presque aussi dense sur le ventre que sur le dos. Seule la couleur change.
-""".count(". ")
+""".count(".")
+# avec le copy paste, ça a un peu cassé la syntaxe, normalement il aurait fallu count(". ")
 
 print(texte_super_interessant)

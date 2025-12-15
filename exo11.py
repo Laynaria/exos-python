@@ -34,8 +34,19 @@ elif ("e" in mot or "a" in mot) :
 # elle existe) est supérieure à 0
 
 # Résultat attendu: RGB RGBA RGB de couleur noire RGBA RGBA RGBA de couleur blanche RGBA
-# colors = [(12, 72, 89), (23, 77, 200, 1), (0, 0, 0), (123, 123, 67, 1), (255, 255,
-# 255, 0), (255, 255, 255, 1), (0, 0, 0, 0)]
-# for color in colors:
-#     match color:
+colors = [(12, 72, 89), (23, 77, 200, 1), (0, 0, 0), (123, 123, 67, 1), (255, 255, 255, 0), (255, 255, 255, 1), (0, 0, 0, 0)]
+for color in colors:
+    match color:
+        case [R, G, B] if R == 0 and G == 0 and B == 0:
+            print("Couleur noire")
+        case [R, G, B] if R == 255 and G == 255 and B == 255:
+            print("Couleur blanche")
+        case [R, G, B, A] if R == 0 and G == 0 and B == 0 and A > 0:
+            print("Couleur noire")
+        case [R, G, B, A] if R == 255 and G == 255 and B == 255 and A > 0:
+            print("Couleur blanche")
+        case [R, G, B]:
+            print("RGB")
+        case [R, G, B, A] :
+            print("RGBA")
         # Ecrire le code ici

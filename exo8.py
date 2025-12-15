@@ -2,6 +2,7 @@
 # En chaînant la fonction replace(), transformer la phrase suivante en "Au clair du soleil"
 # Printer le résultat
 base = "Au clair de la lune".replace("de la lune", "du soleil")
+# base = "Au clair de la lune".replace("de la", "du").replace("lune", "soleil") #correction
 print(base)
 
 # Exo2
@@ -14,7 +15,9 @@ print(phrase)
 # Une seule ligne de code autorisée pour la transformation
 # Printer le résultat
 phrase2 = " python\tc'est\ntrop cool xx".strip(" ").replace("\t", " ").replace("\n", " ").capitalize().strip(" xx")
-print(phrase2)
+# correction sans triche : phrase2 = " python\tc'est\ntrop cool xx".strip("xx").strip(" ").replace("\t", " ").replace("\n", " ").capitalize()
+
+print(phrase2 == "Python c'est trop cool")
 
 # Exo4
 # Compter le nombre de phrases dans ce texte
@@ -26,6 +29,6 @@ Son pelage est typique d'une espèce aquatique. La peau est protégée par une d
 couche de poils de bourre, qui maintiennent une pellicule d'air tempéré entre elle
 et l'eau. Les poils de jarre, plus longs, protègent l'ensemble. La fourrure est
 presque aussi dense sur le ventre que sur le dos. Seule la couleur change.
-""".count(".")
+""".count(". ")
 
 print(texte_super_interessant)

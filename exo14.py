@@ -1,8 +1,10 @@
+# Exo 1
 # Printer le nombre 5 à partir de la liste suivante
 liste = [1, 2, [3, 4, [5, 6, 7]]]
 # A l'aide d'une slice, extrayez 3 et 4
 print(liste[2][0:2])
 
+# Exo 2
 # A partir du texte suivant, créer une liste contenant chacune des phrases
 # Créer une slice regroupant les phrases du texte en inversant leur ordre d'apparition
 # Joindre la slice avec un antislash pour séparateur et printer le résultat

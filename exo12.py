@@ -2,11 +2,11 @@
 # Créer un script python écrivant 5 entiers aléatoires entre 0 et 100 dans un fichier .txt dans votre dossier 'Documents'
 # Le résultat doit apparaître comme ceci: "Voici mes 5 nombres aléatoires: X, X, X, X et X"
 import random as rd;
-a = rd.randint(0, 100)
-b = rd.randint(0, 100)
-c = rd.randint(0, 100)
-d = rd.randint(0, 100)
-e = rd.randint(0, 100)
+a = rd.randint(0, 101)
+b = rd.randint(0, 101)
+c = rd.randint(0, 101)
+d = rd.randint(0, 101)
+e = rd.randint(0, 101)
 
 from pathlib import Path
 
@@ -31,6 +31,12 @@ today = date.today()
 
 result = today.year - date_naissance.year - ((today.month, today.day) < (date_naissance.month, date_naissance.day))
 print(result)
+
+
+# Correction :
+# import datetime
+# time_delta = datetime.datetime.now() - datetime.datetime.fromisoformat(date_naissance)
+# print(time_delta.days//365)
 
 # Exo3
 # A l'aide du module zipfile, extraire l'archives source.zip situé dans le dossier "Annexes"

@@ -4,14 +4,23 @@ nombre = input("Tappez un nombre ")
 try :
     nombre = int(nombre)
 # Si celui-ci est pair, printer "Vous avez entré un nombre pair."
-    if (type(nombre) == int and nombre % 2 == 0) :
+    if (nombre % 2 == 0) :
         print("Vous avez entré un nombre pair.")
 # Si celui-ci est impair, printer "Vous avez entré un nombre impair."
-    elif (type(nombre) == int and nombre % 2 != 0) :
+    elif (nombre % 2 != 0) :
         print("Vous avez entré un nombre impair.")
 # Si l'information entrée n'est pas un nombre printer "Vous devez entrer un nombre!"
 except :
     print("Vous devez entrer un nombre!")
+
+# Correction avec isdigit :
+# nombre = input("Entrer un nombre entier"):
+# if not nombre.isdigit(): 
+#   print("Vous devez rentrer un nombre!") 
+# elif int(nombre) % 2 == 0: 
+#   print("Vous avez entré un nombre paire.") 
+# elif int(nombre) % 2 != 0: 
+#   print("Vous avez entré un nombre impaire.")
 
 # Exo 2
 # Demander à un utilisateur de taper un mot
@@ -22,6 +31,12 @@ if (("e" in mot and "a" not in mot) or ("a" in mot and "e" not in mot)) :
     print("Boop")
 elif ("e" in mot or "a" in mot) :
     print("Beep")
+
+# Correction XOR
+# if ('a' in mot) ^ ('e' in mot):
+#     print("Opérateur OU exclusif")
+# else:
+#     print("Rien à signaler!")
 
 # Exo 3 - Optionnel
 # A l'aide d'un match case et d'une boucle, printer "RGB" lorsque la couleur présente dans la liste suivante est une couleur au format RGB (Red Green Blue), et
@@ -37,6 +52,7 @@ elif ("e" in mot or "a" in mot) :
 colors = [(12, 72, 89), (23, 77, 200, 1), (0, 0, 0), (123, 123, 67, 1), (255, 255, 255, 0), (255, 255, 255, 1), (0, 0, 0, 0)]
 for color in colors:
     match color:
+        # Ecrire le code ici
         case [R, G, B] if R == 0 and G == 0 and B == 0:
             print("Couleur noire")
         case [R, G, B] if R == 255 and G == 255 and B == 255:
@@ -49,4 +65,3 @@ for color in colors:
             print("RGB")
         case [R, G, B, A] :
             print("RGBA")
-        # Ecrire le code ici

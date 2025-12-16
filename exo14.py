@@ -16,3 +16,18 @@ liste2 = texte.split(". ")
 liste2 = liste2[::-1]
 
 print(("/").join(liste2))
+
+# Exo 3
+# Insérer 2 en dernier élément de la liste
+# Insérer 31 en premier élément de la liste
+# Insérer 100 au milieu de la liste (doit fonctionner quelques soit la longueur de la liste)
+# Printer la liste obtenue
+# Créer un objet filter, qui ne retient de la liste que les éléments inférieur ou égaux à 30
+# Printer l'objet sous forme d'une liste
+li = [23, 12, 7, 38, 90, 9, 1, 0]
+li.append(2)
+li.insert(0, 31)
+li.insert(len(li) // 2, 100)
+print(li)
+filter = filter(lambda x: x <= 30, li)
+print(list(filter))

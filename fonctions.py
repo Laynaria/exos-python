@@ -12,8 +12,8 @@ def extendator():
     liste_depart.extend([4, 5, 6])
 
 # Exo 3
-def add(a, b):
+def add(a: float, b: float) -> float:
     return a + b
 
-def carre(a):
+def carre(a: float) -> float:
     return a ** 2

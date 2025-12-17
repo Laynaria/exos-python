@@ -3,7 +3,7 @@
 # racine carrée de ce nombre (vous pouvez utiliser le module math)
 # Printer l'appel de la fonction avec un nombre donné
 
-from fonctions import square_root
+from fonctions import square_root, liste_depart, extendator
 
 print(square_root(16))
 
@@ -11,11 +11,6 @@ print(square_root(16))
 # Créer une fonction extendator ne prenant aucun paramètre, et qui ne retourne rien.
 # Faire en sorte qu'elle modifie la liste suivante définie dans l'espace global en
 # l'étendant de la liste suivante [4, 5, 6]
-liste_depart = [1, 2, 3]
-
-def extendator():
-    liste_depart.extend([4, 5, 6])
-
 extendator()
 print(liste_depart)
 

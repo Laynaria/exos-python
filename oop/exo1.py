@@ -1,16 +1,16 @@
 class Animal:
-    population = 0
+    population: int = 0
 
     def __init__(self, name : str, age: int):
         Animal.population += 1
-        self.name = name
-        self.age = age
+        self.name: str = name
+        self.age: int = age
     
-    def shout():
+    def shout() -> None:
         pass
 
     @staticmethod
-    def animal_number():
+    def animal_number() -> int:
         return Animal.population
 
 

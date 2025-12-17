@@ -2,10 +2,8 @@
 # Créer une fonction square_root prenant un nombre en paramètre, et retournant la
 # racine carrée de ce nombre (vous pouvez utiliser le module math)
 # Printer l'appel de la fonction avec un nombre donné
-import math
 
-def square_root(a):
-    return math.sqrt(a)
+from fonctions import square_root
 
 print(square_root(16))
 
@@ -23,11 +21,9 @@ print(liste_depart)
 
 # Exo 3:
 # Créer une fonction add prenant en paramètres deux nombres et qui retourne l'addition de ses deux nombres
-def add(a, b):
-    return a + b
+from fonctions import add
 # Créer une fonction carre qui prend un nombre en paramètre et retourne ce dernier élevé au carré
-def carre(a):
-    return a ** 2
+from fonctions import carre
 # A l'aide de ses deux fonction, retourner la somme des carrés de 2 et 3 (2² + 3²)
 # Printer le résultat
 print(add(carre(2), carre(3)))
@@ -52,3 +48,8 @@ maze = [[8, 1, 1, 1, 1, 0], # 0
  [1, 0, 0, 0, 1, 0], # 3 
  [1, 1, 1, 0, 1, 0], # 4 
  [0, 1, 0, 0, 1, 9]] # 5
+
+# def get_out(arg):
+#     return
+
+# get_out(maze)

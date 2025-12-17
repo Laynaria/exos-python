@@ -1,0 +1,8 @@
+# 1. Créez un module calcul.py contenant des fonctions de base pour les opérations mathématiques:
+# addition, soustraction, multiplication, et division. Utilisez des annotations de type et des docstrings
+# pour chaque fonction.
+
+# done
+
+# 2. Créez un fichier main.py qui importe le module calcul et utilise ses fonctions. Assurez-vous d'utiliser
+# des annotations de type pour les variables et les fonctions.

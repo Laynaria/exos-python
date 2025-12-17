@@ -12,22 +12,22 @@ class Animal(ABC):
         return f"{self.name.capitalize()} ({self.age} ans)"
     
     @property
-    def name(self):
+    def name(self) -> str:
         return self._name
     
     @name.setter
-    def name(self, new_name):
+    def name(self, new_name) -> None:
         if len(new_name) >= 2:
             self._name = new_name
         else:
             raise ValueError(f"Name should have at least two characters: {new_name}")
 
     @property
-    def age(self):
+    def age(self) -> int:
         return self._age
     
     @age.setter
-    def age(self, new_age):
+    def age(self, new_age) -> None:
         if new_age >= 0:
             self._age = new_age
         else:

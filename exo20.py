@@ -1,6 +1,6 @@
 # Exo 1:
 # 1. Créez une fonction `addition` qui prend un nombre variable d'arguments et retourne leur somme. Testez la fonction.
-def addition(*args):
+def addition(*args: tuple[int | float]) -> float:
     somme = 0;
     for arg in args:
         somme += arg
@@ -9,7 +9,7 @@ def addition(*args):
 print(addition(1, 2, 3, 4))
 
 # 2. Créez une fonction `liste_arguments` qui prend un nombre variable d'arguments et les affiche. Testez la fonction.
-def liste_arguments(*args):
+def liste_arguments(*args: tuple[str]):
     for arg in args:
         print(arg)
 
@@ -17,7 +17,7 @@ liste_arguments("a", "zerty", "salut")
 
 # Exo 2:
 # 1. Créez une fonction `infos_personnelles` qui prend un nombre variable d'arguments par mot-clé et affiche ces informations. Testez la fonction.
-def infos_personnelles(**kwargs):
+def infos_personnelles(**kwargs) -> None:
     for key, value in kwargs.items():
         print(f"{key}: {value}")
 
@@ -26,10 +26,10 @@ infos_personnelles(nom="Alice", age=49, is_ready=True)
 
 # 2. Créez une fonction `multiplication_kwargs` qui multiplie les valeurs des arguments par mot-clé qui sont des nombres. Testez la fonction.
 # Exemple :
-def multiplication_kwargs(**kwargs):
+def multiplication_kwargs(**kwargs) -> float:
     multiply = 1
-    for key, value in kwargs.items():
-        if isinstance(value, int):
+    for _, value in kwargs.items():
+        if isinstance(value, float):
             multiply *= value
     return multiply
 
@@ -40,7 +40,7 @@ print(multiplication_kwargs(a=2, b="toto", c=4)) # 2 * 4 => 8
 # 1. Créez une fonction `affiche_details` qui accepte un argument positionnel, un
 # nombre variable d'arguments positionnels et un nombre variable d'arguments par
 # mot-clé. Testez la fonction.
-def affiche_details(arg1, *args, **kwargs):
+def affiche_details(arg1: str | float | bool, *args: tuple[str, float, bool], **kwargs) -> None:
     print(f"arg1 : {arg1}")
     for arg in args:
         print(arg)

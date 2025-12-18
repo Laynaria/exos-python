@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Vehicule(ABC):
+class Vehicle(ABC):
     def __init__(self, brand: str, model: str, year: int, speed: int = 0):
         self.brand: str = brand
         self.model: str = model
@@ -52,3 +52,33 @@ class Vehicule(ABC):
 
     def from_factory(cls, *args, **kwargs):
         return cls(*args, **kwargs)
+    
+
+
+class Car(Vehicle):
+    def __init__(self, door_nb: int, brand: str, model: str, year: int, speed: int = 0):
+        super().__init__(brand, model, year, speed)
+        self.door_nb = door_nb
+
+    
+    @property
+    def door_nb(self) -> int:
+        return self.__door_nb
+    
+    @door_nb.setter
+    def door_nb(self, new_door_nb) -> None:
+        self.__door_nb = new_door_nb
+
+    def accelerate(self):
+        self.speed += 5
+
+
+class Motorbike(Vehicle):
+        def __init__(self, brand: str, model: str, year: int, speed: int = 0):
+            super().__init__(brand, model, year, speed)
+
+        def accelerate(self):
+            self.speed += 3
+
+        def accrobatics():
+            print("Wheel-in!")

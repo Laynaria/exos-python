@@ -37,7 +37,6 @@ class Book:
         print(f"Year: {self.publication_year}")
 
     # Magic Methods
-
     def __str__(self):
-        print(f"Book : {self.title} written by {self.author} published in {self.publication_year}")
+        return f"Book : {self.title} written by {self.author} published in {self.publication_year}"
 

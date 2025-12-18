@@ -45,7 +45,6 @@ class Library:
         try:
             with open("./oop/exo5/library.json", "r") as json_file:
                 data = json.load(json_file)
-                print(data)
                 for book in data:
                     book_to_add = BorrowableBook(book["title"], book["author"], book["publication_year"])
 
@@ -58,4 +57,16 @@ class Library:
         
 
     def save_library(self) -> None:
-        pass
+        data = []
+
+        for book in self.books:
+            book_for_data = {
+                "title" : book._title,
+                "author": book.author ,
+                "publication_year": book.publication_year,
+                "available": book.available
+                            }
+            data.append(book_for_data)
+        
+        with open("./oop/exo5/library.json", "w") as json_file:
+            json.dump(data, json_file, indent=4)

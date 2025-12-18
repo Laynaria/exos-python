@@ -3,21 +3,6 @@ from library import Library
 
 new_library = Library()
 
-# new_book1 = BorrowableBook("Gulliver's Travels", "Jonathan Swift", 1726)
-# new_book2 = BorrowableBook("The Imaginary Invalid", "Molière", 1913)
-
-# print("Add first book :")
-# new_library.add_book(new_book1)
-# new_library.show_books()
-
-# print("Add second book :")
-# new_library.add_book(new_book2)
-# new_library.show_books()
-
-# print("Remove first book: ")
-# new_library.remove_book(new_book1)
-# new_library.show_books()
-
 while True:
     print("\nMenu")
     print("1. Add A Book")
@@ -25,7 +10,8 @@ while True:
     print("3. Show List of Books")
     print("4. Borrow a Book")
     print("5. Return a Book")
-    print("6. Exit Library")
+    print("6. Search for a Book")
+    print("7. Exit Library")
 
     choix = input("\nWhat do you want to do ? ")
 
@@ -57,5 +43,15 @@ while True:
             new_library.return_book(title)
 
         case "6":
+            title = input("\nBook you want to search: ")
+            for book in new_library.books:
+                if book.title == title:
+                    book.show_details()
+                    break
+            else:
+                print(f"No book with this title!")
+
+
+        case "7":
             print("Goodbye!")
             break

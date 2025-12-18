@@ -1,3 +1,4 @@
+import json
 from borrowable_book import BorrowableBook
 
 class Library:
@@ -41,7 +42,20 @@ class Library:
                 return
     
     def load_library(self) -> None:
-        pass
+        try:
+            with open("./oop/exo5/library.json", "r") as json_file:
+                data = json.load(json_file)
+                print(data)
+                for book in data:
+                    book_to_add = BorrowableBook(book["title"], book["author"], book["publication_year"])
+
+                    if book["available"] == False:
+                        book_to_add.available = False
+                    
+                    self.books.append(book_to_add)
+        except FileNotFoundError:
+            print("The file library.json doesn't exist!")
+        
 
     def save_library(self) -> None:
         pass

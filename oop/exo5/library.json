@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Gulliver's Travels",
+        "author": "Jonathan Swift",
+        "publication_year": "1726",
+        "available": true
+    },
+    {
+        "title": "The Imaginary Invalid",
+        "author": "Molière",
+        "publication_year": "1913",
+        "available": false
+    }
+]

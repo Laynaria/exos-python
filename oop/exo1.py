@@ -44,14 +44,19 @@ class Animal(ABC):
     
 
 class Chien(Animal):
+    # pass # peut suffir car on ajoute pas de nouvelles propriétés
     def __init__(self, name: str, age: int):
         super().__init__(name, age) 
 
     def shout() -> None:
         return "Woof!"
     
-    # @classmethod
-    # def from_factory(name, age):
+    @classmethod
+    def from_factory(cls, name, age):
+        if len(name) >= 3 and age > 0:
+            return cls(name, age)
+        else:
+            raise ValueError(f"name should be at least 3 characters : {name} and age above 0 : {age}")
         
 
 nord = Animal("nord", 7)
@@ -62,4 +67,3 @@ print(nord.name, nord.age)
 print(Animal.population)
 print(Animal.animal_number())
 print(roger)
-

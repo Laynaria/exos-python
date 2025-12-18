@@ -12,35 +12,35 @@ class Vehicle(ABC):
     
     @property
     def brand(self) -> str:
-        return self.__brand
+        return self._brand
 
     @brand.setter
     def brand(self, new_brand) -> None:
-        self.__brand = new_brand
+        self._brand = new_brand
 
     @property
     def model(self) -> str:
-        return self.__model
+        return self._model
     
     @model.setter
     def model(self, new_model) -> None:
-        self.__model = new_model
+        self._model = new_model
 
     @property
     def year(self) -> int:
-        return self.__year
+        return self._year
     
     @year.setter
     def year(self, new_year) -> None:
-        self.__year = new_year
+        self._year = new_year
 
     @property
     def speed(self) -> int:
-        return self.__speed
+        return self._speed
     
     @speed.setter
     def speed(self, new_speed) -> None:
-        self.__speed = new_speed
+        self._speed = new_speed
 
 
     @abstractmethod
@@ -48,7 +48,7 @@ class Vehicle(ABC):
         pass
 
     def stop(self) -> None:
-        self.__speed = 0
+        self._speed = 0
 
     def from_factory(cls, *args, **kwargs):
         return cls(*args, **kwargs)

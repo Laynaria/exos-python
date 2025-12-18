@@ -38,7 +38,7 @@ class NegativeValueException(Exception):
 
 def verify_value(value: int | float) -> None:
     if value < 0:
-        raise NegativeValueException()
+        raise NegativeValueException # optionnal () only needed if we want to change the message
     else:
         print(value)
 

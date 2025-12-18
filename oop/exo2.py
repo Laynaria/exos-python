@@ -1,15 +1,14 @@
 from abc import ABC, abstractmethod
 
 class Vehicle(ABC):
-    def __init__(self, brand: str, model: str, year: int, speed: int = 0):
+    def __init__(self, brand: str, model: str, year: int):
         self.brand: str = brand
         self.model: str = model
         self.year: int = year
-        self.speed: int = speed
+        self.speed: int = 0 # correction to initialize the speed always at 0 without being able to set a speed from a new vehicle
 
-    def __str__(self):
-        return f"{self.brand} {self.model} from {self.year} move at {self.speed} km/h"
-    
+    # GETTERS / SETTERS
+
     @property
     def brand(self) -> str:
         return self._brand
@@ -42,6 +41,7 @@ class Vehicle(ABC):
     def speed(self, new_speed) -> None:
         self._speed = new_speed
 
+    # Methods
 
     @abstractmethod
     def accelerate() -> None:
@@ -50,17 +50,21 @@ class Vehicle(ABC):
     def stop(self) -> None:
         self._speed = 0
 
+    @classmethod # forgot it
     def from_factory(cls, *args, **kwargs):
         return cls(*args, **kwargs)
     
+    # Magic Methods
 
+    def __str__(self):
+        return f"{self.brand} {self.model} from {self.year} move at {self.speed} km/h"
 
 class Car(Vehicle):
-    def __init__(self, door_nb: int, brand: str, model: str, year: int, speed: int = 0):
-        super().__init__(brand, model, year, speed)
+    def __init__(self, door_nb: int, brand: str, model: str, year: int):
+        super().__init__(brand, model, year)
         self.door_nb = door_nb
 
-    
+    # Getters / Setters
     @property
     def door_nb(self) -> int:
         return self.__door_nb
@@ -69,19 +73,27 @@ class Car(Vehicle):
     def door_nb(self, new_door_nb) -> None:
         self.__door_nb = new_door_nb
 
-    def accelerate(self):
+    # Methods
+
+    def accelerate(self) -> None:
         self.speed += 5
+
+    # Magic Methods
+
+    def __str__(self):
+        return f"{self.brand} {self.model} with {self.door_nb} doors from {self.year} move at {self.speed} km/h"
 
 
 class Motorbike(Vehicle):
-        def __init__(self, brand: str, model: str, year: int, speed: int = 0):
-            super().__init__(brand, model, year, speed)
+        # not needed because no new attributes
+        # def __init__(self, brand: str, model: str, year: int):
+        #     super().__init__(brand, model, year)
 
-        def accelerate(self):
+        def accelerate(self) -> None:
             self.speed += 3
 
-        def accrobatics(self) -> None:
-            print("Wheel-in!")
+        def accrobatics(self) -> str:
+            return "Wheel-in!"
 
 
 # Properly doesn't work since it's an abstract class
@@ -101,4 +113,4 @@ harley.accelerate()
 harley.accelerate()
 harley.accelerate()
 print(harley) # properly accelarated three times
-harley.accrobatics()
+print(harley.accrobatics())

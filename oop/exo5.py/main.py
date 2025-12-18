@@ -2,6 +2,7 @@ from borrowable_book import BorrowableBook
 from library import Library
 
 new_library = Library()
+new_library.load_library()
 
 while True:
     print("\nMenu")
@@ -24,11 +25,13 @@ while True:
             book = BorrowableBook(title, author, publication_year)
             new_library.add_book(book)
             print(f"{title} successfully added to the Library")
+            new_library.save_library()
 
         case "2":
             title = input("\nBook you want to remove: ")
             new_library.remove_book(title)
             print(f"{title} successfully removed from Library")
+            new_library.save_library()
         
         case "3":
             print("\nList of Library's books")
@@ -37,10 +40,12 @@ while True:
         case "4":
             title = input("\nBook you want to borrow: ")
             new_library.borrow_book(title)
+            new_library.save_library()
 
         case "5":
             title = input("\nBook you want to return: ")
             new_library.return_book(title)
+            new_library.save_library()
 
         case "6":
             title = input("\nBook you want to search: ")

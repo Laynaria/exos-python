@@ -39,3 +39,9 @@ class Library:
             if (book.title == title and isinstance(book, BorrowableBook) and book.available):
                 print(f"{book.title} can't be returned!")
                 return
+    
+    def load_library(self) -> None:
+        pass
+
+    def save_library(self) -> None:
+        pass

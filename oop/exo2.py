@@ -80,5 +80,25 @@ class Motorbike(Vehicle):
         def accelerate(self):
             self.speed += 3
 
-        def accrobatics():
+        def accrobatics(self) -> None:
             print("Wheel-in!")
+
+
+# Properly doesn't work since it's an abstract class
+# new_vehicle = Vehicle("citroen", "c2", 5)
+# print(new_vehicle)
+
+# Car properly seems to work
+citroen = Car(4 ,"citroen", "c2", 5)
+print(citroen) # shows the car info except doors
+print(citroen.door_nb) # getter works
+citroen.accelerate()
+print(citroen) # properly sped up
+
+harley = Motorbike("Davidson", "Harley", 7)
+print(harley)
+harley.accelerate()
+harley.accelerate()
+harley.accelerate()
+print(harley) # properly accelarated three times
+harley.accrobatics()

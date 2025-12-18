@@ -1,0 +1,54 @@
+from abc import ABC, abstractmethod
+
+class Vehicule(ABC):
+    def __init__(self, brand: str, model: str, year: int, speed: int = 0):
+        self.brand: str = brand
+        self.model: str = model
+        self.year: int = year
+        self.speed: int = speed
+
+    def __str__(self):
+        return f"{self.brand} {self.model} from {self.year} move at {self.speed} km/h"
+    
+    @property
+    def brand(self) -> str:
+        return self.__brand
+
+    @brand.setter
+    def brand(self, new_brand) -> None:
+        self.__brand = new_brand
+
+    @property
+    def model(self) -> str:
+        return self.__model
+    
+    @model.setter
+    def model(self, new_model) -> None:
+        self.__model = new_model
+
+    @property
+    def year(self) -> int:
+        return self.__year
+    
+    @year.setter
+    def year(self, new_year) -> None:
+        self.__year = new_year
+
+    @property
+    def speed(self) -> int:
+        return self.__speed
+    
+    @speed.setter
+    def speed(self, new_speed) -> None:
+        self.__speed = new_speed
+
+
+    @abstractmethod
+    def accelerate() -> None:
+        pass
+
+    def stop(self) -> None:
+        self.__speed = 0
+
+    def from_factory(cls, *args, **kwargs):
+        return cls(*args, **kwargs)

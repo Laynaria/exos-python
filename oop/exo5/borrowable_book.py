@@ -18,3 +18,6 @@ class BorrowableBook(Book):
         print(f"Title: {self.title}")
         print(f"Year: {self.publication_year}")
         print(f"Available: {"Available" if self.available else "Already Borrowed"}")
+
+# We could skip setter to protect it more, and only add the borrow and give back methods here instead of in library
+# It could be better for purposes to have the borrowable methods here in, for best practics of separation of concerns

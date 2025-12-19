@@ -1,6 +1,8 @@
 import json
 from borrowable_book import BorrowableBook
 
+json_path = "./oop/exo5/library.json"
+
 class Library:
     def __init__(self):
         self.books : list[BorrowableBook] = []
@@ -43,7 +45,7 @@ class Library:
     
     def load_library(self) -> None:
         try:
-            with open("./oop/exo5/library.json", "r") as json_file:
+            with open(json_path, "r") as json_file:
                 data = json.load(json_file)
                 for book in data:
                     book_to_add = BorrowableBook(book["title"], book["author"], book["publication_year"])
@@ -68,5 +70,5 @@ class Library:
                             }
             data.append(book_for_data)
         
-        with open("./oop/exo5/library.json", "w") as json_file:
+        with open(json_path, "w") as json_file:
             json.dump(data, json_file, indent=4)
